@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK标准教程5 · Giáo trình chuẩn HSK 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F5F5;
+    --teal:#76ABAE;
+    --teal-soft:#E6F0F0;
+    --ink:#303841;
+    --ink-soft:#5C6672;
+    --flame:#FF5722;
+    --flame-soft:#FFE7DC;
+    --white:#FFFFFF;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --shadow:0 10px 30px -14px rgba(48,56,65,0.28);
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Be Vietnam Pro', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--flame); color:#fff;}
+  .hanzi{font-family:'Noto Serif SC', serif;}
+  h1,h2,h3{font-family:'Baloo 2', sans-serif;}
+
+  .wrap{max-width:1100px; margin:0 auto; padding:26px 24px 70px;}
+
+  /* ---------- Brand ---------- */
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    width:44px; height:44px; border-radius:13px; flex-shrink:0;
+    background:linear-gradient(145deg, var(--flame), #ff8a50);
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Noto Sans SC'; font-weight:700; font-size:20px;
+    box-shadow:0 8px 18px -6px rgba(255,87,34,.55);
+  }
+  .eyebrow{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+  .brand h1{margin:0; font-size:22px; font-weight:700;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    margin-top:22px; position:relative; overflow:hidden;
+    background:linear-gradient(120deg, var(--ink) 0%, #3c4653 100%);
+    border-radius:var(--radius-lg); padding:34px 34px 32px; color:#fff;
+  }
+  .hero::after{
+    content:"HSK5"; position:absolute; right:22px; top:50%; transform:translateY(-50%);
+    font-family:'Noto Serif SC'; font-size:110px; font-weight:700; color:rgba(255,255,255,.05);
+    white-space:nowrap; pointer-events:none;
+  }
+  .hero .k{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); font-weight:700;}
+  .hero h2{margin:6px 0 0; font-size:34px; line-height:1.2;}
+  .hero h2 .hanzi{font-weight:700;}
+  .hero p{margin:10px 0 0; max-width:560px; color:rgba(255,255,255,.75); font-size:15px; line-height:1.6;}
+  .hero-actions{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    font-weight:600; font-size:14.5px; border-radius:100px; padding:11px 20px;
+    transition:transform .2s var(--ease), box-shadow .2s;
+  }
+  .btn-primary{background:var(--flame); color:#fff; box-shadow:0 10px 22px -10px rgba(255,87,34,.8);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2);}
+  .btn-ghost:hover{background:rgba(255,255,255,.16);}
+  .progress{margin-top:22px; position:relative; z-index:1; max-width:420px;}
+  .progress .bar{height:8px; border-radius:100px; background:rgba(255,255,255,.12); overflow:hidden;}
+  .progress .fill{height:100%; background:linear-gradient(90deg, var(--teal), #a8d3d5); border-radius:100px;}
+  .progress .lbl{margin-top:8px; font-size:13px; color:rgba(255,255,255,.7);}
+
+  /* ---------- Clusters ---------- */
+  .cluster{margin-top:36px;}
+  .card{min-height:150px;}
+  .cluster-head{display:flex; align-items:baseline; gap:12px; margin-bottom:14px;}
+  .cluster-head h3{margin:0; font-size:20px;}
+  .cluster-head .sub{font-size:13px; color:var(--ink-soft);}
+  .grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+
+  .card{
+    position:relative; display:flex; flex-direction:column; gap:10px;
+    background:#fff; border-radius:var(--radius-md); padding:20px 20px 18px;
+    box-shadow:var(--shadow); text-decoration:none; color:var(--ink);
+    border:2px solid transparent; min-height:170px;
+    transition:transform .25s var(--ease), border-color .2s, box-shadow .25s;
+  }
+  a.card:hover{transform:translateY(-3px); border-color:var(--teal);}
+  a.card:focus-visible{outline:3px solid var(--flame); outline-offset:2px;}
+  .card .top{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .card .num{
+    font-family:'Baloo 2'; font-weight:800; font-size:34px; line-height:1; color:var(--flame);
+  }
+  .card .tag{
+    font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 10px; border-radius:100px; background:var(--teal-soft); color:#4b7f82;
+  }
+  .card .zh{font-size:19px; font-weight:600; line-height:1.45;}
+  .card .vi{font-size:13.5px; color:var(--ink-soft); line-height:1.55; font-style:italic;}
+  .card .go{margin-top:auto; font-size:13px; font-weight:600; color:var(--teal);}
+  a.card:hover .go{color:var(--flame);}
+
+  .card.latest{border-color:var(--flame);}
+  .card.latest .tag{background:var(--flame-soft); color:var(--flame);}
+
+  .card.locked{background:#ECEDEE; box-shadow:none; color:#9AA2AA; cursor:default;}
+  .card.locked .num{color:#B9C0C6;}
+  .card.locked .zh{color:#8A939C;}
+  .card.locked .tag{background:#DDE0E3; color:#8A939C;}
+  .card.locked .go{color:#A3AAB1;}
+
+  footer{margin-top:46px; text-align:center; font-size:12.5px; color:var(--ink-soft);}
+
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width:560px){
+    .wrap{padding:20px 16px 56px;}
+    .hero{padding:26px 22px;}
+    .hero h2{font-size:27px;}
+    .hero::after{font-size:70px; right:-10px;}
+    .grid{grid-template-columns:1fr;}
+    .card{min-height:0;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <div class="brand-mark">汉</div>
+    <div>
+      <div class="eyebrow">HSK标准教程 5（上） · Hệ thống bài học</div>
+      <h1>Giáo trình chuẩn HSK 5</h1>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="k">ChiuChiu HSK5</div>
+    <h2><span class="hanzi">HSK标准教程 5</span></h2>
+    <p>Bài khóa, từ vựng, chú thích, bài tập và phần vận dụng của 18 bài trong giáo trình chuẩn HSK 5 (quyển thượng) — có audio, pinyin, bản dịch, nét viết và đáp án.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" id="btnLatest" href="bai1.html">▶ Học bài mới nhất</a>
+      <a class="btn btn-ghost" href="bai1.html">Bắt đầu từ Bài 1</a>
+    </div>
+    <div class="progress">
+      <div class="bar"><div class="fill" id="progFill" style="width:0%"></div></div>
+      <div class="lbl" id="progLbl"></div>
+    </div>
+  </section>
+
+  <main id="clusters"></main>
+
+  <footer>HSK标准教程 5（上） · Giáo trình chuẩn HSK 5 · ChiuChiu</footer>
+</div>
+
+<script src="bai-config.js"></script>
+<script>
+const CFG = window.BAI_CONFIG || {total:18, available:[1], titles:{}};
+const total = CFG.total;
+const available = CFG.available;
+const TITLES = CFG.titles || {};
+const latest = Math.max(...available);
+
+// Nút "Học bài mới nhất" + thanh tiến độ
+document.getElementById('btnLatest').href = `bai${latest}.html`;
+document.getElementById('btnLatest').textContent = `▶ Học bài mới nhất · Bài ${latest}`;
+document.getElementById('progFill').style.width = (available.length / total * 100) + '%';
+document.getElementById('progLbl').textContent = `Đã mở ${available.length}/${total} bài`;
+
+// Liệt kê từng bài (không chia cụm / chủ đề)
+let html = `<section class="cluster">
+  <div class="cluster-head"><h3>Danh sách bài học</h3><span class="sub">${total} bài</span></div>
+  <div class="grid">`;
+for(let i = 1; i <= total; i++){
+  const [zh, vi] = TITLES[i] || ['', ''];
+  const open = available.includes(i);
+  const isLatest = i === latest;
+  if(open){
+    html += `<a class="card${isLatest ? ' latest' : ''}" href="bai${i}.html">
+      <div class="top"><span class="num">${i}</span><span class="tag">${isLatest ? 'Mới nhất' : 'Đã mở'}</span></div>
+      <div class="zh hanzi">${zh}</div>
+      <div class="vi">${vi}</div>
+      <div class="go">Vào học →</div>
+    </a>`;
+  } else {
+    html += `<div class="card locked" aria-disabled="true">
+      <div class="top"><span class="num">${i}</span><span class="tag">🔒 Sắp có</span></div>
+      <div class="zh hanzi">${zh || 'Bài ' + i}</div>
+      <div class="vi">${vi || 'Đang soạn'}</div>
+      <div class="go">Chưa mở</div>
+    </div>`;
+  }
+}
+html += `</div></section>`;
+document.getElementById('clusters').innerHTML = html;
+</script>
+</body>
+</html>
