@@ -18,8 +18,13 @@
    ===================================================================== */
 window.BAI_CONFIG = {
   total: 18,
-  available: [1],
+  available: [1, 2, 3, 4, 5, 6],
   titles: {
-    1: ["爱的细节", "Những điều nhỏ nhặt trong tình yêu"]
+    1: ["爱的细节", "Những điều nhỏ nhặt trong tình yêu"],
+    2: ["留串钥匙给父母", "Để chìa khóa cho ba mẹ"],
+    3: ["人生有选择，一切可改变", "Đời người có lựa chọn, mọi thứ có đổi thay"],
+    4: ["子路背米", "Tử Lộ vác gạo"],
+    5: ["济南的泉水", "Nước suối Tế Nam"],
+    6: ["除夕的由来", "Nguồn gốc đêm giao thừa"]
   }
 };
